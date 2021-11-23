@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 import './App.css';
+import Barra from './componentes/Barra';
+import MatricularEstudiante from './componentes/MatricularEstudiante';
+import Inicio from './componentes/Inicio';
+import VisualizarMatriculas from './componentes/VisualizarMatriculas';
+import EditarMatricula from './componentes/EditarMatricula';
+import login from './componentes/login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+
+    <Barra/>
+
+    <Route path ='/' exact component={login}/>
+    <Route path = 'Inicio' exact componen ={Inicio}/>
+    <Route path ='/MatricularEstudiante' exact component={MatricularEstudiante}/>
+    <Route path ='/VisualizarMatriculas' exact component={VisualizarMatriculas}/>
+    <Route path ='/EditarMatricula' exact component={EditarMatricula}/>
+    
+  
+    
+  </Router>
+
+
+   
+
+  
   );
 }
 
